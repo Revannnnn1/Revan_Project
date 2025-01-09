@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // JavaScript untuk mengontrol tampilan konten berdasarkan navbar
+    function showSection(sectionId) {
+      // Sembunyikan semua bagian
+      document.querySelectorAll("section").forEach(section => {
+        section.classList.add("hidden");
+      });
+
+      // Tampilkan bagian yang sesuai
+      document.getElementById(sectionId).classList.remove("hidden");
+    }
+
+    // Default: Tampilkan layar pertama (Kelola Kamar) saat halaman dimuat
+    window.onload = () => {
+      showSection('kelola-kamar');
+    };
+  </script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Layout -->
+  <div class="flex h-screen">
+<!-- Sidebar -->
+<aside class="w-64 bg-gradient-to-b from-indigo-800 to-indigo-600 text-gray-100">
+  <!-- Header -->
+  <div class="p-6 text-center font-semibold text-2xl bg-indigo-900 rounded-t-lg shadow-lg">
+    <a href="#" class="text-white">Admin Dashboard</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="mt-8">
+    <ul class="space-y-2">
+      <!-- Kelola Jenis Kamar -->
+      <li class="hover:bg-indigo-700 transition duration-300 transform rounded-lg">
+        <button onclick="showSection('kelola-kamar')" class="flex items-center w-full px-6 py-3 text-left text-lg font-medium">
+          Kelola Jenis Kamar
+        </button>
+      </li>
+
+      <!-- Kelola Fasilitas Hotel -->
+      <li class="hover:bg-indigo-700 transition duration-300 transform rounded-lg">
+        <button onclick="showSection('kelola-fasilitas')" class="flex items-center w-full px-6 py-3 text-left text-lg font-medium">
+          Kelola Fasilitas Hotel
+        </button>
+      </li>
+
+      <!-- Data Pemesanan Konsumen -->
+      <li class="hover:bg-indigo-700 transition duration-300 transform rounded-lg">
+        <button onclick="showSection('data-pemesanan')" class="flex items-center w-full px-6 py-3 text-left text-lg font-medium">
+          Data Pemesanan Konsumen
+        </button>
+      </li>
+
+      <!-- Logout -->
+      <li class="hover:bg-indigo-700 transition duration-300 transform rounded-lg">
+        <button onclick="window.location.href='index.html';" class="flex items-center w-full px-6 py-3 text-left text-lg font-medium">
+          Logout
+        </button>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+<!-- Header -->
+<header class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white shadow-lg p-6 mb-8 rounded-xl">
+  <div class="flex items-center space-x-4">
+    <div>
+      <h1 class="text-2xl font-bold">Selamat Datang, Admin!</h1>
+      <p class="text-sm">Kelola data hotel dan pelanggan dengan mudah.</p>
+    </div>
+  </div>
+</header>
+
+
+<!-- Content Section -->
+<section id="kelola-kamar" class="hidden">
+  <h2 class="text-2xl font-semibold mb-6 text-gray-800">Kelola Jenis Kamar</h2>
+  <div class="bg-gradient-to-r from-indigo-100 to-indigo-200 shadow-lg rounded-lg p-8">
+    <!-- Konten Kelola Kamar -->
+    <table class="w-full text-left table-auto border-collapse">
+      <thead>
+        <tr>
+          <th class="border-b-2 p-4 text-sm font-medium text-gray-600">Tipe Kamar</th>
+          <th class="border-b-2 p-4 text-sm font-medium text-gray-600">Harga</th>
+          <th class="border-b-2 p-4 text-sm font-medium text-gray-600">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-gray-50">
+          <td class="p-4">Standart</td>
+          <td class="p-4">Rp 500,000</td>
+          <td class="p-4">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">Edit</button>
+            <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-200 ml-2">Hapus</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="p-4">Premium</td>
+          <td class="p-4">Rp 750,000</td>
+          <td class="p-4">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">Edit</button>
+            <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-200 ml-2">Hapus</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="bg-green-600 text-white mt-6 px-6 py-3 rounded-lg hover:bg-green-700 transition duration-200">Tambah Kamar</button>
+  </div>
+</section>
+
+
+<section id="kelola-fasilitas" class="hidden">
+  <h2 class="text-2xl font-bold mb-6 text-gray-800">Kelola Fasilitas Hotel</h2>
+  <div class="bg-white shadow-lg rounded-lg p-8">
+      <!-- Konten Kelola Fasilitas -->
+      <table class="w-full text-left border-collapse">
+          <thead>
+              <tr class="bg-gray-100">
+                  <th class="border-b-2 border-gray-200 p-4 text-gray-600 uppercase text-sm">Fasilitas</th>
+                  <th class="border-b-2 border-gray-200 p-4 text-gray-600 uppercase text-sm">Deskripsi</th>
+                  <th class="border-b-2 border-gray-200 p-4 text-gray-600 uppercase text-sm">Aksi</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="hover:bg-gray-50 transition">
+                  <td class="p-4 font-medium text-gray-700">Kolam Renang</td>
+                  <td class="p-4 text-gray-600">Kolam renang yang bersih dan luas</td>
+                  <td class="p-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition">Edit</button>
+                      <button class="bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition">Hapus</button>
+                  </td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition">
+                  <td class="p-4 font-medium text-gray-700">Restoran</td>
+                  <td class="p-4 text-gray-600">Sajian makanan lokal dan internasional</td>
+                  <td class="p-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition">Edit</button>
+                      <button class="bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition">Hapus</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      <div class="mt-6 flex justify-end">
+          <button class="bg-green-500 text-white px-6 py-3 rounded-lg shadow hover:bg-green-600 transition font-semibold">+ Tambah Fasilitas</button>
+      </div>
+  </div>
+</section>
+
+
+<section id="data-pemesanan" class="hidden">
+  <h2 class="text-2xl font-semibold mb-6 text-gray-800">Data Pemesanan Konsumen</h2>
+  <div class="bg-gradient-to-r from-blue-50 to-blue-100 shadow-xl rounded-lg p-8">
+    <!-- Konten Data Pemesanan -->
+    <table class="w-full text-left table-auto border-collapse">
+      <thead>
+        <tr>
+          <th class="border-b-2 p-4 text-sm font-medium text-gray-600">Nama Konsumen</th>
+          <th class="border-b-2 p-4 text-sm font-medium text-gray-600">Tipe Kamar</th>
+          <th class="border-b-2 p-4 text-sm font-medium text-gray-600">Durasi</th>
+          <th class="border-b-2 p-4 text-sm font-medium text-gray-600">Total Harga</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-gray-50 transition duration-300">
+          <td class="p-4">Bayu Leha</td>
+          <td class="p-4">Standar</td>
+          <td class="p-4">3 Malam</td>
+          <td class="p-4">Rp 1,500,000</td>
+        </tr>
+        <tr class="hover:bg-gray-50 transition duration-300">
+          <td class="p-4">Ambatukam</td>
+          <td class="p-4">Premium</td>
+          <td class="p-4">2 Malam</td>
+          <td class="p-4">Rp 1,500,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+    </main>
+  </div>
+</body>
+</html>

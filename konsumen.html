@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel - Konsumen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Konsumen Dashboard Layout -->
+  <div class="flex flex-col min-h-screen">
+<!-- Navbar -->
+<nav class="bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="#" class="text-2xl font-semibold tracking-wide hover:text-gray-200 transition duration-300">Hotel</a>
+    <ul class="flex space-x-6">
+      <li>
+        <a href="#jenis-kamar" class="text-lg hover:text-gray-200 transition duration-300">Jenis Kamar</a>
+      </li>
+      <li>
+        <a href="#fasilitas" class="text-lg hover:text-gray-200 transition duration-300">Fasilitas</a>
+      </li>
+      <li>
+        <a href="#pemesanan" class="text-lg hover:text-gray-200 transition duration-300">Pemesanan</a>
+      </li>
+      <li>
+        <a href="#logout" class="text-lg hover:text-gray-200 transition duration-300">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    
+
+ <!-- Hero Section -->
+<header class="bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-24 text-center rounded-b-lg shadow-lg">
+  <h1 class="text-5xl font-extrabold tracking-wide mb-4">Selamat Datang di Hotel Kami</h1>
+  <p class="text-xl font-medium mb-8">Temukan kenyamanan dan fasilitas terbaik untuk liburan Anda.</p>
+  <a href="#pemesanan" class="bg-white text-teal-600 px-8 py-3 text-lg font-semibold rounded-lg shadow-lg hover:bg-teal-50 transition duration-300">Pesan Sekarang</a>
+</header>
+
+ <!-- Main Content -->
+<main class="flex-1 container mx-auto p-6">
+  <!-- Jenis Kamar -->
+  <section id="jenis-kamar" class="mb-12">
+    <h2 class="text-3xl font-extrabold text-teal-600 mb-6 text-center">Jenis Kamar</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Kamar 1 -->
+      <div class="bg-white rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="img/standart.jpg" alt="Gambar Kamar Deluxe Room" class="w-full h-56 object-cover rounded-t-lg mb-4">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Standart</h3>
+          <p class="text-teal-500 font-semibold">Rp 500,000 / malam</p>
+        </div>
+      </div>
+      <!-- Kamar 2 -->
+      <div class="bg-white rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="img/deluxe.jpg" alt="Gambar Kamar Superior Room" class="w-full h-56 object-cover rounded-t-lg mb-4">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Premium</h3>
+          <p class="text-teal-500 font-semibold">Rp 750,000 / malam</p>
+        </div>
+      </div>
+      <!-- Kamar 3 -->
+      <div class="bg-white rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="img/superi.jpg" alt="Gambar Kamar Suite Room" class="w-full h-56 object-cover rounded-t-lg mb-4">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Super Premium</h3>
+          <p class="text-teal-500 font-semibold">Rp 1,000,000 / malam</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <!-- Fasilitas -->
+<section id="fasilitas" class="mb-12">
+  <h2 class="text-3xl font-extrabold text-teal-600 mb-8 text-center">Fasilitas</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Fasilitas 1 -->
+    <div class="bg-white shadow-xl rounded-lg p-6 flex items-center transform hover:scale-105 transition duration-300 ease-in-out">
+      <img src="img/kolam.jpeg" alt="Gambar Kolam Renang" class="rounded-full w-24 h-24 mr-6 object-cover border-4 border-teal-400">
+      <div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Kolam Renang</h3>
+        <p class="text-gray-600">Nikmati kolam renang luas yang bersih dan nyaman.</p>
+      </div>
+    </div>
+    <!-- Fasilitas 2 -->
+    <div class="bg-white shadow-xl rounded-lg p-6 flex items-center transform hover:scale-105 transition duration-300 ease-in-out">
+      <img src="img/resto.jpg" alt="Gambar Restoran" class="rounded-full w-24 h-24 mr-6 object-cover border-4 border-teal-400">
+      <div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Restoran</h3>
+        <p class="text-gray-600">Sajian makanan lokal dan internasional terbaik.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="flex-1 container mx-auto p-6">
+  <!-- Pemesanan -->
+  <section id="pemesanan" class="mb-12">
+    <h2 class="text-3xl font-extrabold text-teal-600 mb-8 text-center">Pemesanan</h2>
+    <form id="pemesananForm" class="bg-white shadow-xl rounded-lg p-8">
+      <div class="mb-6">
+        <label for="nama" class="block text-gray-700 font-semibold">Nama</label>
+        <input type="text" id="nama" placeholder="Masukkan nama Anda" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 transition duration-300" required>
+      </div>
+      <div class="mb-6">
+        <label for="identitas" class="block text-gray-700 font-semibold">Nomor Identitas</label>
+        <input type="text" id="identitas" placeholder="Masukkan nomor identitas" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 transition duration-300" required>
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700 font-semibold">Jenis Kelamin</label>
+        <div class="mt-2">
+          <label class="inline-flex items-center mr-6">
+            <input type="radio" name="gender" value="Laki-laki" class="form-radio text-teal-500" required>
+            <span class="ml-2">Laki-laki</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input type="radio" name="gender" value="Perempuan" class="form-radio text-teal-500">
+            <span class="ml-2">Perempuan</span>
+          </label>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label for="kamar" class="block text-gray-700 font-semibold">Tipe Kamar</label>
+        <select id="kamar" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 transition duration-300">
+          <option value="Deluxe Room">Standart</option>
+          <option value="Superior Room">Premium</option>
+          <option value="Suite Room">Superior</option>
+        </select>
+      </div>
+      <div class="mb-6">
+        <label for="durasi" class="block text-gray-700 font-semibold">Durasi Menginap (malam)</label>
+        <input type="number" id="durasi" placeholder="Masukkan jumlah malam" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 transition duration-300" required>
+      </div>
+      <button type="button" onclick="tampilkanResume()" class="bg-teal-500 text-white py-3 px-6 rounded-lg hover:bg-teal-600 transition duration-300">
+        Simpan
+      </button>
+    </form>
+  </section>
+</main>
+
+<!-- Data Resume -->
+<div id="resume" class="bg-white shadow-xl rounded-lg p-8 mt-8 hidden">
+  <h3 class="text-2xl font-semibold text-teal-600 mb-6 text-center">Resume Pemesanan</h3>
+  <p><strong class="text-gray-800">Nama:</strong> <span id="resumeNama" class="text-gray-600 font-medium"></span></p>
+  <p><strong class="text-gray-800">Nomor Identitas:</strong> <span id="resumeIdentitas" class="text-gray-600 font-medium"></span></p>
+  <p><strong class="text-gray-800">Jenis Kelamin:</strong> <span id="resumeGender" class="text-gray-600 font-medium"></span></p>
+  <p><strong class="text-gray-800">Tipe Kamar:</strong> <span id="resumeKamar" class="text-gray-600 font-medium"></span></p>
+  <p><strong class="text-gray-800">Durasi Menginap:</strong> <span id="resumeDurasi" class="text-gray-600 font-medium"></span> malam</p>
+  <p><strong class="text-gray-800">Diskon:</strong> <span id="resumeDiskon" class="text-teal-600 font-medium"></span>%</p>
+  <p><strong class="text-gray-800">Total Bayar:</strong> Rp <span id="resumeTotal" class="text-teal-600 font-medium"></span></p>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-6 mt-12 text-center">
+  <p class="text-sm">&copy; 2025 Hotel. All rights reserved.</p>
+  <div class="mt-4">
+    <a href="#privacy-policy" class="text-gray-400 hover:text-teal-500">Privacy Policy</a> | 
+    <a href="#terms" class="text-gray-400 hover:text-teal-500">Terms of Service</a>
+  </div>
+</footer>
+
+
+  <script>
+    function tampilkanResume() {
+      const nama = document.getElementById("nama").value;
+      const identitas = document.getElementById("identitas").value;
+      const gender = document.querySelector('input[name="gender"]:checked').value;
+      const kamar = document.getElementById("kamar").value;
+      const durasi = parseInt(document.getElementById("durasi").value);
+
+      // Harga kamar berdasarkan tipe
+      const hargaKamar = {
+        "Deluxe Room": 500000,
+        "Superior Room": 750000,
+        "Suite Room": 1000000
+      };
+
+      // Hitung total bayar dan diskon
+      const hargaPerMalam = hargaKamar[kamar];
+      let total = hargaPerMalam * durasi;
+      let diskon = 0;
+
+      if (durasi > 3) {
+        diskon = 10; // Diskon 10% untuk menginap lebih dari 3 malam
+        total -= total * (diskon / 100);
+      }
+
+      // Tampilkan data resume
+      document.getElementById("resumeNama").textContent = nama;
+      document.getElementById("resumeIdentitas").textContent = identitas;
+      document.getElementById("resumeGender").textContent = gender;
+      document.getElementById("resumeKamar").textContent = kamar;
+      document.getElementById("resumeDurasi").textContent = durasi;
+      document.getElementById("resumeDiskon").textContent = diskon;
+      document.getElementById("resumeTotal").textContent = total.toLocaleString();
+
+      // Tampilkan resume
+      document.getElementById("resume").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
